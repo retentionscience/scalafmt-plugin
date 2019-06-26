@@ -1,5 +1,7 @@
 name := "scalafmt-plugin"
 
+organization := "com.retentionscience"
+
 version := "0.0.1"
 
 scalaVersion := "2.12.8"

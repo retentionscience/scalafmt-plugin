@@ -1,4 +1,6 @@
-import sbt.Keys._
+package scalafmt.plugin
+
+import sbt.Keys.{ compile, streams }
 import sbt._
 
 object ScalafmtRemoteConfigPlugin extends AutoPlugin {
@@ -23,8 +25,8 @@ object ScalafmtRemoteConfigPlugin extends AutoPlugin {
       .info("Downloading .scalafmt config from remote repository...")
     val remoteScalafmtFile =
       "https://raw.githubusercontent.com/retentionscience/scalafmt-plugin/master/.scalafmt.conf"
-    val baseDir = (Compile / baseDirectory).value
-    url(s"$remoteScalafmtFile") #> (baseDir / ".scalafmt.conf") !
+    val baseDir = System.getProperty("user.dir")
+    url(s"$remoteScalafmtFile") #> file(s"$baseDir/.scalafmt.conf") !
   }
 
 }
