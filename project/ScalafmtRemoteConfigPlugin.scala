@@ -22,7 +22,7 @@ object ScalafmtRemoteConfigPlugin extends AutoPlugin {
     streams.value.log
       .info("Downloading .scalafmt config from remote repository...")
     val remoteScalafmtFile =
-      "https://raw.githubusercontent.com/retentionscience/scalafmt/master/.scalafmt.conf"
+      "https://raw.githubusercontent.com/retentionscience/scalafmt-plugin/master/.scalafmt.conf"
     val baseDir = (Compile / baseDirectory).value
     url(s"$remoteScalafmtFile") #> (baseDir / ".scalafmt.conf") !
   }
