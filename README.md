@@ -13,10 +13,6 @@
     ```
     addSbtPlugin("com.retentionscience" % "scalafmt-plugin" % "0.0.1")
     ```
-4. Enable the plugin inside `build.sbt`
-    ```
-    enablePlugins(ScalafmtRemoteConfigPlugin)
-    ```
-5. The latest `.scalafmt.conf` file will be downloaded to the project's root directory on each compile
-6. Verify IntelliJ is using `scalafmt` as the default Scala Code Formatter in *Preferences > Editor > Code Style > Scala*
+4. The latest `.scalafmt.conf` file will be downloaded to the project's root directory on each compile
+5. Verify IntelliJ is using `scalafmt` as the default Scala Code Formatter in *Preferences > Editor > Code Style > Scala*
     1. Optionally check the box for `Reformat on file save`

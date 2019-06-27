@@ -5,6 +5,8 @@ import sbt._
 
 object ScalafmtRemoteConfigPlugin extends AutoPlugin {
 
+  override def trigger = allRequirements
+
   object autoImport {
     lazy val remoteScalafmtConfig =
       taskKey[Unit]("Fetch .scalafmt from external repository")
