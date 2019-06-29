@@ -1,6 +1,6 @@
 package scalafmt.plugin
 
-import sbt.Keys.{ compile, streams }
+import sbt.Keys.{ streams, update }
 import sbt._
 
 object ScalafmtRemoteConfigPlugin extends AutoPlugin {
@@ -13,14 +13,14 @@ object ScalafmtRemoteConfigPlugin extends AutoPlugin {
   }
 
   import autoImport._
-  override lazy val projectSettings = Seq(
+  override def projectSettings = Seq(
     remoteScalafmtConfig := remoteScalafmtConfigImpl.value,
-    compile in Compile := (compile in Compile)
+    update in Compile := (update in Compile)
       .dependsOn(remoteScalafmtConfig)
       .value
   )
 
-  lazy val remoteScalafmtConfigImpl = Def.task {
+  private def remoteScalafmtConfigImpl = Def.task {
     import scala.sys.process._
 
     streams.value.log
