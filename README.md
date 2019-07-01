@@ -1,6 +1,6 @@
 # scalafmt-plugin
 
-##### A plugin that fetches the latest `.scalafmt.conf` file and imports it into the current project.
+#### A plugin that fetches the latest `.scalafmt.conf` file and imports it into the current project.
 
 ### Notes
 1. Any changes to the company-wide Scala style should be made here
