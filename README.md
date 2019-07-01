@@ -8,8 +8,10 @@
 3. Overwrites the existing file if it already exists
 
 ### How to use this plugin
-1. Add the latest `scalafmt-plugin` version to `plugins.sbt`
+1. Add the following lines to `plugins.sbt` (use the latest version of `scalafmt-plugin`)
     ```
+    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+    resolvers += "Retention Science Releases" at "http://ci.wajao.com:8081/nexus/content/groups/public/"
     addSbtPlugin("com.retentionscience" % "scalafmt-plugin" % "x.x.x")
     ```
 2. The latest `.scalafmt.conf` file will be downloaded to the project's root directory on each `sbt update`
