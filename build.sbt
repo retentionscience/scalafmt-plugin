@@ -7,7 +7,7 @@ lazy val root = (project in file("."))
     sbtVersion := {
       scalaVersion.value match {
         case version if version.startsWith("2.12") => "1.2.8"
-        case _ => "0.13.18" // current not executing the plugin task
+        case _ => "0.13.18"
       }
     },
     crossScalaVersions := Seq("2.10.7", "2.12.8"),
