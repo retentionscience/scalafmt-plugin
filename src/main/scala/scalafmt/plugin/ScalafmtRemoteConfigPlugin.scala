@@ -13,7 +13,7 @@ object ScalafmtRemoteConfigPlugin extends AutoPlugin {
   }
 
   import autoImport._
-  
+
   override def projectSettings = Seq(
     remoteScalafmtConfig := remoteScalafmtConfigImpl.value,
     update in Compile := (update in Compile)
@@ -26,9 +26,11 @@ object ScalafmtRemoteConfigPlugin extends AutoPlugin {
 
     streams.value.log
       .info("Downloading .scalafmt config from remote repository...")
+
     val remoteScalafmtFile =
       "https://raw.githubusercontent.com/retentionscience/scalafmt-plugin/master/.scalafmt.conf"
     val baseDir = System.getProperty("user.dir")
+
     url(s"$remoteScalafmtFile") #> file(s"$baseDir/.scalafmt.conf") !
   }
 
