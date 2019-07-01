@@ -13,6 +13,7 @@ object ScalafmtRemoteConfigPlugin extends AutoPlugin {
   }
 
   import autoImport._
+  
   override def projectSettings = Seq(
     remoteScalafmtConfig := remoteScalafmtConfigImpl.value,
     update in Compile := (update in Compile)
