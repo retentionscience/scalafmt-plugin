@@ -3,8 +3,9 @@
 ## A plugin that fetches the latest `.scalafmt.conf` file and imports it into the current project.
 
 ### Notes
-1. Works with SBT 0.13.x and 1.x
-2. Overwrites the existing file if it already exists
+1. Any changes to the company-wide Scala style should be made here
+2. Works with SBT 0.13.x and 1.x
+3. Overwrites the existing file if it already exists
 
 ### How to use this plugin
 1. Add the latest `scalafmt-plugin` version to `plugins.sbt`
