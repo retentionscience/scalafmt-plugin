@@ -5,11 +5,11 @@ lazy val root = (project in file("."))
     description := "An SBT plugin for pulling the latest .scalafmt.conf file",
     sbtVersion := {
       scalaVersion.value match {
-        case version if version.startsWith("2.12") => "1.2.8"
+        case version if version.startsWith("2.12") => "1.3.3"
         case _ => "0.13.18"
       }
     },
-    crossScalaVersions := Seq("2.10.7", "2.12.8"),
+    crossScalaVersions := Seq("2.10.7", "2.12.10"),
     crossSbtVersions := Seq("0.13.18", "1.2.8"),
     sbtPlugin := true,
     publishMavenStyle := true,
