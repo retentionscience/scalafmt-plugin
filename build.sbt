@@ -21,5 +21,6 @@ lazy val root = (project in file("."))
         Some("releases" at nexus + "content/repositories/releases")
       }
     },
+    bloopExportJarClassifiers in Global := Some(Set("sources")),
     credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
   )
